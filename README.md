@@ -91,3 +91,23 @@ const highlight = "code";
 | langPrefix | string | `'language-'` | A prefix to add to the class of the `code` tag. |
 | emptyLangClass | string | `''` | The class to add to the `code` tag if the language is empty. |
 | highlight | function | `(code: string, lang: string) => {}` | Required. The function to transform the code to html. |
+
+### `suggestion`
+
+[https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js](https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js)
+
+Suggest replacing all the space characters with "\s" in the RegExp.
+
+```js
+const other = {
+	listItemRegex: (bull) => new RegExp(`^( {0,3}${bull})((?:[\t ][^\\n]*)?(?:\\n|$))`),
+}
+```
+
+change to 
+
+```js
+const other = {
+	listItemRegex: (bull) => new RegExp(`^(\s{0,3}${bull})((?:[\t ][^\\n]*)?(?:\\n|$))`),
+}
+```
